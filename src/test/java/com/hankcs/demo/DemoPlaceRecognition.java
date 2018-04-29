@@ -14,6 +14,7 @@ package com.hankcs.demo;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.Segment;
 import com.hankcs.hanlp.seg.common.Term;
+import javafx.scene.shape.HLineTo;
 
 import java.util.List;
 
@@ -28,6 +29,13 @@ public class DemoPlaceRecognition
         String[] testCase = new String[]{
                 "蓝翔给宁夏固原市彭阳县红河镇黑牛沟村捐赠了挖掘机",
         };
+        System.out.println("未开启地名识别：");
+        for (String sentence : testCase)
+        {
+            List<Term> termList = HanLP.segment(sentence);
+            System.out.println(termList);
+        }
+        System.out.println("开启地名识别：");
         Segment segment = HanLP.newSegment().enablePlaceRecognize(true);
         for (String sentence : testCase)
         {

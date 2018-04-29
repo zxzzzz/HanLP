@@ -82,6 +82,11 @@ public class DemoWord2Vec
         System.out.printf("\n%50s          Cosine\n------------------------------------------------------------------------\n", query);
     }
 
+    /**
+     * 训练分类器
+     * @return
+     * @throws IOException
+     */
     static WordVectorModel trainOrLoadModel() throws IOException
     {
         if (!IOUtil.isFileExisted(MODEL_FILE_NAME))

@@ -19,6 +19,7 @@ import com.hankcs.hanlp.corpus.io.IOUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * 第一个demo,演示文本分类最基本的调用方式
@@ -44,10 +45,12 @@ public class DemoTextClassification
         predict(classifier, "研究生考录模式亟待进一步专业化");
         predict(classifier, "如果真想用食物解压,建议可以食用燕麦");
         predict(classifier, "通用及其部分竞争对手目前正在考虑解决库存问题");
+        predict(classifier, "请给我一些苹果吧");
     }
 
     private static void predict(IClassifier classifier, String text)
     {
+
         System.out.printf("《%s》 属于分类 【%s】\n", text, classifier.classify(text));
     }
 
