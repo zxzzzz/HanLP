@@ -1,5 +1,6 @@
 package com.hankcs.hanlp.openapi.impl;
 
+import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.classification.classifiers.IClassifier;
 import com.hankcs.hanlp.classification.classifiers.NaiveBayesClassifier;
 import com.hankcs.hanlp.classification.models.NaiveBayesModel;
@@ -16,23 +17,23 @@ public class OperationImpl implements Operation {
     /**
      * 词库
      */
-    private static final String TRAIN_FILE_NAME = "data/test/搜狗文本分类语料库已分词.txt";
+    private static final String TRAIN_FILE_NAME = HanLP.LOCAL_PATH+"data/test/搜狗文本分类语料库已分词.txt";
     /**
      * 词向量保存模型
      */
-    private static final String MODEL_FILE_NAME = "data/test/word2vec.txt";
+    private static final String MODEL_FILE_NAME = HanLP.LOCAL_PATH+"data/test/word2vec.txt";
     /**
      * 中文情感挖掘语料-ChnSentiCorp 谭松波
      */
-    private static final String CORPUS_FOLDER = "data/test/ChnSentiCorp情感分析酒店评论";
+    private static final String CORPUS_FOLDER = HanLP.LOCAL_PATH+"data/test/ChnSentiCorp情感分析酒店评论";
     /**
      * 搜狗文本分类语料库5个类目，每个类目下1000篇文章，共计5000篇文章
      */
-    public static final String CLASS_PATH = "data/test/搜狗文本分类语料库迷你版";
+    public static final String CLASS_PATH = HanLP.LOCAL_PATH+"data/test/搜狗文本分类语料库迷你版";
     /**
      * 模型保存路径
      */
-    public static final String MODEL_PATH = "data/test/classification-model.ser";
+    public static final String MODEL_PATH = HanLP.LOCAL_PATH+"data/test/classification-model.ser";
 
     @Override
     public double textSimilarity(String textOne, String textTwo)  {
@@ -66,6 +67,7 @@ public class OperationImpl implements Operation {
         }
         return pos;
     }
+
 
     @Override
     public String themeClassified(String text) {

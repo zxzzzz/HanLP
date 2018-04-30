@@ -11,6 +11,7 @@
  */
 package com.hankcs.hanlp.corpus.dependency.model;
 
+import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLLoader;
 import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLSentence;
 import com.hankcs.hanlp.corpus.dependency.CoNll.CoNLLWord;
@@ -59,7 +60,7 @@ public class WordNatureWeightModelMaker
         {
             sb.append("case \"" + pos + "\":\n");
         }
-        IOUtil.saveTxt("data/model/dependency/pos-thu.txt", sb.toString());
+        IOUtil.saveTxt(HanLP.LOCAL_PATH+"data/model/dependency/pos-thu.txt", sb.toString());
         return dictionaryMaker.saveTxtTo(modelSavePath);
     }
 

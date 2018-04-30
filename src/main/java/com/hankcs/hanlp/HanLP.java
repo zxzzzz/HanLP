@@ -53,11 +53,14 @@ import static com.hankcs.hanlp.utility.Predefine.logger;
  */
 public class HanLP
 {
+    public static final String LOCAL_PATH = "/home/zx/zhouxuan/GraduationCode/HanLP/target/";
     /**
      * 库的全局配置，既可以用代码修改，也可以通过hanlp.properties配置（按照 变量名=值 的形式）
      */
     public static final class Config
     {
+
+
         /**
          * 开发模式
          */
@@ -65,139 +68,139 @@ public class HanLP
         /**
          * 核心词典路径
          */
-        public static String CoreDictionaryPath = "data/dictionary/CoreNatureDictionary.txt";
+        public static String CoreDictionaryPath = LOCAL_PATH+"data/dictionary/CoreNatureDictionary.txt";
         /**
          * 核心词典词性转移矩阵路径
          */
-        public static String CoreDictionaryTransformMatrixDictionaryPath = "data/dictionary/CoreNatureDictionary.tr.txt";
+        public static String CoreDictionaryTransformMatrixDictionaryPath = LOCAL_PATH+ "data/dictionary/CoreNatureDictionary.tr.txt";
         /**
          * 用户自定义词典路径
          */
-        public static String CustomDictionaryPath[] = new String[]{"data/dictionary/custom/CustomDictionary.txt"};
+        public static String CustomDictionaryPath[] = new String[]{LOCAL_PATH+"data/dictionary/custom/CustomDictionary.txt"};
         /**
          * 2元语法词典路径
          */
-        public static String BiGramDictionaryPath = "data/dictionary/CoreNatureDictionary.ngram.txt";
+        public static String BiGramDictionaryPath = LOCAL_PATH+"data/dictionary/CoreNatureDictionary.ngram.txt";
 
         /**
          * 停用词词典路径
          */
-        public static String CoreStopWordDictionaryPath = "data/dictionary/stopwords.txt";
+        public static String CoreStopWordDictionaryPath =LOCAL_PATH+ "data/dictionary/stopwords.txt";
         /**
          * 同义词词典路径
          */
-        public static String CoreSynonymDictionaryDictionaryPath = "data/dictionary/synonym/CoreSynonym.txt";
+        public static String CoreSynonymDictionaryDictionaryPath =LOCAL_PATH+ "data/dictionary/synonym/CoreSynonym.txt";
         /**
          * 人名词典路径
          */
-        public static String PersonDictionaryPath = "data/dictionary/person/nr.txt";
+        public static String PersonDictionaryPath = LOCAL_PATH+"data/dictionary/person/nr.txt";
         /**
          * 人名词典转移矩阵路径
          */
-        public static String PersonDictionaryTrPath = "data/dictionary/person/nr.tr.txt";
+        public static String PersonDictionaryTrPath = LOCAL_PATH+"data/dictionary/person/nr.tr.txt";
         /**
          * 地名词典路径
          */
-        public static String PlaceDictionaryPath = "data/dictionary/place/ns.txt";
+        public static String PlaceDictionaryPath =LOCAL_PATH+ "data/dictionary/place/ns.txt";
         /**
          * 地名词典转移矩阵路径
          */
-        public static String PlaceDictionaryTrPath = "data/dictionary/place/ns.tr.txt";
+        public static String PlaceDictionaryTrPath =LOCAL_PATH+ "data/dictionary/place/ns.tr.txt";
         /**
          * 地名词典路径
          */
-        public static String OrganizationDictionaryPath = "data/dictionary/organization/nt.txt";
+        public static String OrganizationDictionaryPath = LOCAL_PATH+"data/dictionary/organization/nt.txt";
         /**
          * 地名词典转移矩阵路径
          */
-        public static String OrganizationDictionaryTrPath = "data/dictionary/organization/nt.tr.txt";
+        public static String OrganizationDictionaryTrPath = LOCAL_PATH+"data/dictionary/organization/nt.tr.txt";
         /**
          * 简繁转换词典根目录
          */
-        public static String tcDictionaryRoot = "data/dictionary/tc/";
+        public static String tcDictionaryRoot = LOCAL_PATH+"data/dictionary/tc/";
 
         /**
          * 拼音词典路径
          */
-        public static String PinyinDictionaryPath = "data/dictionary/pinyin/pinyin.txt";
+        public static String PinyinDictionaryPath = LOCAL_PATH+"data/dictionary/pinyin/pinyin.txt";
 
         /**
          * 音译人名词典
          */
-        public static String TranslatedPersonDictionaryPath = "data/dictionary/person/nrf.txt";
+        public static String TranslatedPersonDictionaryPath = LOCAL_PATH+"data/dictionary/person/nrf.txt";
 
         /**
          * 日本人名词典路径
          */
-        public static String JapanesePersonDictionaryPath = "data/dictionary/person/nrj.txt";
+        public static String JapanesePersonDictionaryPath =LOCAL_PATH+ "data/dictionary/person/nrj.txt";
 
         /**
          * 字符类型对应表
          */
-        public static String CharTypePath = "data/dictionary/other/CharType.bin";
+        public static String CharTypePath = LOCAL_PATH+"data/dictionary/other/CharType.bin";
 
         /**
          * 字符正规化表（全角转半角，繁体转简体）
          */
-        public static String CharTablePath = "data/dictionary/other/CharTable.txt";
+        public static String CharTablePath =LOCAL_PATH+ "data/dictionary/other/CharTable.txt";
 
         /**
          * 词性标注集描述表，用来进行中英映射（对于Nature词性，可直接参考Nature.java中的注释）
          */
-        public static String PartOfSpeechTagDictionary = "data/dictionary/other/TagPKU98.csv";
+        public static String PartOfSpeechTagDictionary = LOCAL_PATH+"data/dictionary/other/TagPKU98.csv";
 
         /**
          * 词-词性-依存关系模型
          */
-        public static String WordNatureModelPath = "data/model/dependency/WordNature.txt";
+        public static String WordNatureModelPath = LOCAL_PATH+"data/model/dependency/WordNature.txt";
 
         /**
          * 最大熵-依存关系模型
          */
-        public static String MaxEntModelPath = "data/model/dependency/MaxEntModel.txt";
+        public static String MaxEntModelPath = LOCAL_PATH+"data/model/dependency/MaxEntModel.txt";
         /**
          * 神经网络依存模型路径
          */
-        public static String NNParserModelPath = "data/model/dependency/NNParserModel.txt";
+        public static String NNParserModelPath = LOCAL_PATH+"data/model/dependency/NNParserModel.txt";
         /**
          * CRF分词模型
          */
         // @deprecated 已废弃，请使用{@link com.hankcs.hanlp.model.crf.CRFLexicalAnalyzer}。未来版本将不再发布该模型，并删除配置项
-        public static String CRFSegmentModelPath = "data/model/segment/CRFSegmentModel.txt";
+        public static String CRFSegmentModelPath = LOCAL_PATH+"data/model/segment/CRFSegmentModel.txt";
         /**
          * HMM分词模型
          */
-        public static String HMMSegmentModelPath = "data/model/segment/HMMSegmentModel.bin";
+        public static String HMMSegmentModelPath = LOCAL_PATH+"data/model/segment/HMMSegmentModel.bin";
         /**
          * CRF依存模型
          *
          * @deprecated 已废弃，请使用{@link NeuralNetworkDependencyParser}
          */
-        public static String CRFDependencyModelPath = "data/model/dependency/CRFDependencyModelMini.txt";
+        public static String CRFDependencyModelPath = LOCAL_PATH+"data/model/dependency/CRFDependencyModelMini.txt";
         /**
          * CRF分词模型
          */
-        public static String CRFCWSModelPath = "data/model/crf/pku199801/cws.bin";
+        public static String CRFCWSModelPath = LOCAL_PATH+"data/model/crf/pku199801/cws.bin";
         /**
          * CRF词性标注模型
          */
-        public static String CRFPOSModelPath = "data/model/crf/pku199801/pos.bin";
+        public static String CRFPOSModelPath = LOCAL_PATH+"data/model/crf/pku199801/pos.bin";
         /**
          * CRF命名实体识别模型
          */
-        public static String CRFNERModelPath = "data/model/crf/pku199801/ner.bin";
+        public static String CRFNERModelPath = LOCAL_PATH+"data/model/crf/pku199801/ner.bin";
         /**
          * 感知机分词模型
          */
-        public static String PerceptronCWSModelPath = "data/model/perceptron/pku199801/cws.bin";
+        public static String PerceptronCWSModelPath = LOCAL_PATH+"data/model/perceptron/pku199801/cws.bin";
         /**
          * 感知机词性标注模型
          */
-        public static String PerceptronPOSModelPath = "data/model/perceptron/pku199801/pos.bin";
+        public static String PerceptronPOSModelPath =LOCAL_PATH+ "data/model/perceptron/pku199801/pos.bin";
         /**
          * 感知机命名实体识别模型
          */
-        public static String PerceptronNERModelPath = "data/model/perceptron/pku199801/ner.bin";
+        public static String PerceptronNERModelPath = LOCAL_PATH+"data/model/perceptron/pku199801/ner.bin";
         /**
          * 分词结果是否展示词性
          */
@@ -236,7 +239,7 @@ public class HanLP
                 CoreSynonymDictionaryDictionaryPath = root + p.getProperty("CoreSynonymDictionaryDictionaryPath", CoreSynonymDictionaryDictionaryPath);
                 PersonDictionaryPath = root + p.getProperty("PersonDictionaryPath", PersonDictionaryPath);
                 PersonDictionaryTrPath = root + p.getProperty("PersonDictionaryTrPath", PersonDictionaryTrPath);
-                String[] pathArray = p.getProperty("CustomDictionaryPath", "data/dictionary/custom/CustomDictionary.txt").split(";");
+                String[] pathArray = p.getProperty("CustomDictionaryPath", HanLP.LOCAL_PATH+"data/dictionary/custom/CustomDictionary.txt").split(";");
                 String prePath = root;
                 for (int i = 0; i < pathArray.length; ++i)
                 {
